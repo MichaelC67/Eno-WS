@@ -40,7 +40,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build with Maven Eno-WS
-        run: mvn clean install -DskipTests=true -B -V --file pom.xml   
+        run: mvn clean install -DskipTests=true -B -V --file pom.xml
 
       - name: Upload war
         uses: actions/upload-artifact@v2
@@ -61,6 +61,6 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: opherogel/eno-ws:v1.3.2
+          name: michaelc67/eno-ws:testGHA
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
